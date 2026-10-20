@@ -1,13 +1,17 @@
 import { MotionConfig } from "motion/react";
 
+import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 
 export const HelixApp = () => {
   return (
     <MotionConfig reducedMotion="user">
-      <main className="min-h-dvh bg-background text-foreground">
-        <Hero />
-      </main>
+      <div className="flex min-h-dvh flex-col bg-background text-foreground">
+        <main className="flex-1">
+          <Hero />
+        </main>
+        <Footer />
+      </div>
     </MotionConfig>
   );
 };

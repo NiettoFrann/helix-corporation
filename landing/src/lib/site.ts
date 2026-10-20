@@ -17,6 +17,23 @@ export const SITE = {
   repo: "https://github.com/NiettoFrann/helix-corporation",
 } as const;
 
+export type SocialIcon = "github" | "linkedin" | "globe";
+
+export interface Social {
+  label: string;
+  /** Texto corto que acompaña al nombre (usuario o dominio). */
+  handle: string;
+  href: string;
+  icon: SocialIcon;
+}
+
+/** Redes del autor, para el footer. */
+export const SOCIALS: Social[] = [
+  { label: "GitHub", handle: "NiettoFrann", href: SITE.author.github, icon: "github" },
+  { label: "LinkedIn", handle: "in/niettovale", href: "https://www.linkedin.com/in/niettovale", icon: "linkedin" },
+  { label: "Portfolio", handle: "ntech.studio", href: "https://ntech.studio", icon: "globe" },
+];
+
 /** Paleta de marca para efectos en JS/canvas (el tema de Tailwind vive en index.css). */
 export const BRAND = {
   black: "#0B0B0F",
