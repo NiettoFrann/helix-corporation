@@ -2,6 +2,7 @@ import { useState, type KeyboardEvent } from "react";
 import { ArrowUpRight, Lock } from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 
+import { Reveal } from "@/components/effects/Reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { ZONES } from "@/data";
 import { SITE } from "@/lib/site";
@@ -155,7 +156,7 @@ export function NetworkMap() {
   return (
     <section id="red" className="relative scroll-mt-20 border-t border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-        <header className="mb-12 flex max-w-2xl flex-col gap-4">
+        <Reveal className="mb-12 flex max-w-2xl flex-col gap-4">
           <p className="font-mono text-sm text-system">// mapa de red</p>
           <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
             Cinco zonas. Una sola red.
@@ -164,7 +165,7 @@ export function NetworkMap() {
             Cuanto más profunda la zona, más difíciles las máquinas y más cerca de
             Proyecto Cero. Elegí una para ver qué esconde.
           </p>
-        </header>
+        </Reveal>
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_1.05fr] lg:gap-10">
           {/* Nodos */}
