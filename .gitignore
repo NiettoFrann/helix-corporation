@@ -1,0 +1,21 @@
+# Docker
+*.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Material de autor: canon, writeups, flags y fragmentos en claro.
+# Nunca se sube. La plantilla sí, para que nueva-maquina.sh la copie.
+_privado/
+!plantillas/maquina/_privado/
+
+# Logs y artefactos locales de las máquinas
+red/**/logs/
+red/**/*.log
