@@ -1,5 +1,9 @@
+import { Hero } from "@/components/sections/Hero";
+
 export const HelixApp = () => {
   return (
-    <div>HelixApp</div>
-  )
-}
+    <main className="min-h-dvh bg-background text-foreground">
+      <Hero />
+    </main>
+  );
+};
