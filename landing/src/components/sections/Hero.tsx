@@ -1,30 +1,13 @@
+import { useRef } from "react";
 import { ArrowRight, ExternalLink, FileText } from "lucide-react";
-import { motion, type Variants } from "motion/react";
+import { motion, useScroll, useTransform, type Variants } from "motion/react";
 
+import { LiveTerminal } from "@/components/effects/LiveTerminal";
 import { Logo } from "@/components/layout/Logo";
 import { buttonVariants } from "@/components/ui/button";
-import { useTypewriter } from "@/hooks/useTypewriter";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-type Tone = "prompt" | "muted" | "warn" | "ok";
-
-const BOOT: { text: string; tone: Tone }[] = [
-  { text: "$ ssh helix-corp@10.0.4.12", tone: "prompt" },
-  { text: "Last login: Mon Sep 28 03:14:07 -0300 from unknown", tone: "muted" },
-  { text: "[!] Credenciales válidas, pero no emitidas por HELIX Corp.", tone: "warn" },
-  { text: "[!] Origen del acceso: LA MANO NEGRA", tone: "warn" },
-  { text: "[ok] Cargando helix-corporation... listo.", tone: "ok" },
-];
-
-const BOOT_TEXT = BOOT.map((line) => line.text);
-
-const TONE_CLASS: Record<Tone, string> = {
-  prompt: "text-system",
-  muted: "text-muted-foreground",
-  warn: "text-primary",
-  ok: "text-ok",
-};
 
 const container: Variants = {
   hidden: {},
@@ -37,30 +20,34 @@ const item: Variants = {
 };
 
 export function Hero() {
-  const { lines, done } = useTypewriter(BOOT_TEXT);
-  const lastRendered = lines.length - 1;
+  const ref = useRef<HTMLElement>(null);
+  const reduced = usePrefersReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0px", "90px"]);
+  const cueOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   return (
-    <section className="relative isolate overflow-hidden">
-      {/* Grilla de fondo */}
-      <div
+    <section ref={ref} className="relative isolate overflow-hidden">
+      {/* Capa de fondo con parallax */}
+      <motion.div
         aria-hidden
-        className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-        }}
-      />
-      {/* Resplandores */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 -left-32 h-[480px] w-[480px] rounded-full bg-system/10 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-16 -right-24 h-[560px] w-[560px] rounded-full bg-primary/10 blur-3xl"
-      />
+        className="pointer-events-none absolute inset-0"
+        style={reduced ? undefined : { y: bgY }}
+      >
+        <div
+          className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+          }}
+        />
+        <div className="absolute -top-40 -left-32 h-[480px] w-[480px] rounded-full bg-system/10 blur-3xl" />
+        <div className="absolute top-16 -right-24 h-[560px] w-[560px] rounded-full bg-primary/10 blur-3xl" />
+      </motion.div>
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col gap-8 px-4 py-6 sm:px-6 sm:py-8">
         {/* Barra superior */}
@@ -144,7 +131,7 @@ export function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Terminal */}
+            {/* Terminal viva */}
             <motion.div
               className="w-full overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40"
               initial={{ opacity: 0, x: 24 }}
@@ -159,27 +146,7 @@ export function Hero() {
                   helix-corp@10.0.4.12: ~/la-mano-negra
                 </span>
               </div>
-              <div className="min-h-55 space-y-1.5 p-5 font-mono text-[0.8rem] leading-relaxed sm:text-sm">
-                {BOOT.map((line, i) => {
-                  const text = lines[i];
-                  if (text === undefined) return null;
-                  return (
-                    <div key={i} className={cn("break-words", TONE_CLASS[line.tone])}>
-                      <span>{text}</span>
-                      {i === lastRendered && (
-                        <span
-                          className={cn(
-                            "ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-foreground",
-                            done && "animate-pulse",
-                          )}
-                        >
-                          &nbsp;
-                        </span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+              <LiveTerminal />
             </motion.div>
           </div>
         </div>
@@ -189,9 +156,7 @@ export function Hero() {
           href="#red"
           aria-label="Ir a la red"
           className="mx-auto flex flex-col items-center gap-1 pb-2 font-mono text-[10px] tracking-widest text-muted-foreground transition-colors hover:text-foreground"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
+          style={reduced ? undefined : { opacity: cueOpacity }}
         >
           EXPLORAR LA RED
           <motion.span
