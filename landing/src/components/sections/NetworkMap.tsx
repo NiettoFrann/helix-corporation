@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { ArrowUpRight, Lock } from "lucide-react";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 
@@ -9,12 +9,12 @@ import { cn } from "@/lib/utils";
 import type { Difficulty, ZoneId } from "@/types";
 
 /** Acento por zona: progresión cian → verde → ámbar → rojo → púrpura al bajar en la red. */
-const ACCENTS: Record<ZoneId, { text: string; bar: string; border: string; soft: string }> = {
-  "00-perimetro": { text: "text-system", bar: "bg-system", border: "border-system/50", soft: "bg-system/10" },
-  "01-corporativo": { text: "text-ok", bar: "bg-ok", border: "border-ok/50", soft: "bg-ok/10" },
-  "02-clientes": { text: "text-warn", bar: "bg-warn", border: "border-warn/50", soft: "bg-warn/10" },
-  "03-legado": { text: "text-primary", bar: "bg-primary", border: "border-primary/50", soft: "bg-primary/10" },
-  "04-proyecto-cero": { text: "text-cero", bar: "bg-cero", border: "border-cero/50", soft: "bg-cero/10" },
+const ACCENTS: Record<ZoneId, { text: string; bar: string; border: string; soft: string; cssVar: string }> = {
+  "00-perimetro": { text: "text-system", bar: "bg-system", border: "border-system/50", soft: "bg-system/10", cssVar: "var(--system)" },
+  "01-corporativo": { text: "text-ok", bar: "bg-ok", border: "border-ok/50", soft: "bg-ok/10", cssVar: "var(--ok)" },
+  "02-clientes": { text: "text-warn", bar: "bg-warn", border: "border-warn/50", soft: "bg-warn/10", cssVar: "var(--warn)" },
+  "03-legado": { text: "text-primary", bar: "bg-primary", border: "border-primary/50", soft: "bg-primary/10", cssVar: "var(--primary)" },
+  "04-proyecto-cero": { text: "text-cero", bar: "bg-cero", border: "border-cero/50", soft: "bg-cero/10", cssVar: "var(--cero)" },
 };
 
 const DIFF: Record<Difficulty, { label: string; chip: string; dot: string }> = {
@@ -32,6 +32,120 @@ const node: Variants = {
   hidden: { opacity: 0, x: -12 },
   show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
+
+/** Posición de cada zona en el diagrama de topología (viewBox 1000×380). */
+const POS: Record<ZoneId, { cx: number; cy: number }> = {
+  "00-perimetro": { cx: 250, cy: 190 },
+  "01-corporativo": { cx: 450, cy: 190 },
+  "02-clientes": { cx: 665, cy: 95 },
+  "03-legado": { cx: 665, cy: 285 },
+  "04-proyecto-cero": { cx: 875, cy: 285 },
+};
+
+const NODE_W = 150;
+const NODE_H = 54;
+
+interface SchematicProps {
+  selectedId: ZoneId;
+  onSelect: (id: ZoneId) => void;
+}
+
+function NetworkSchematic({ selectedId, onSelect }: SchematicProps) {
+  const onKey = (event: KeyboardEvent<SVGGElement>, id: ZoneId) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onSelect(id);
+    }
+  };
+
+  return (
+    <svg
+      viewBox="0 0 1000 380"
+      className="h-auto w-full min-w-[720px]"
+      role="group"
+      aria-label="Topología de la red de HELIX"
+    >
+      <defs>
+        <marker id="nm-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto">
+          <path d="M0,0 L6.5,3 L0,6 Z" fill="var(--border)" />
+        </marker>
+        <marker id="nm-arrow-cero" markerWidth="8" markerHeight="8" refX="6.5" refY="3" orient="auto">
+          <path d="M0,0 L6.5,3 L0,6 Z" fill="var(--cero)" />
+        </marker>
+      </defs>
+
+      {/* Conexiones */}
+      <g fill="none" stroke="var(--border)" strokeWidth="1.5">
+        <line x1="130" y1="190" x2="173" y2="190" markerEnd="url(#nm-arrow)" />
+        <line x1="325" y1="190" x2="373" y2="190" markerEnd="url(#nm-arrow)" />
+        <path d="M525,190 C 575,190 575,95 588,95" markerEnd="url(#nm-arrow)" />
+        <path d="M525,190 C 575,190 575,285 588,285" markerEnd="url(#nm-arrow)" />
+        <line
+          x1="740"
+          y1="285"
+          x2="798"
+          y2="285"
+          stroke="var(--cero)"
+          strokeOpacity="0.7"
+          strokeDasharray="5 5"
+          markerEnd="url(#nm-arrow-cero)"
+        />
+      </g>
+
+      {/* Internet */}
+      <rect x="20" y="166" width="110" height="48" rx="10" fill="var(--muted)" stroke="var(--border)" />
+      <text x="75" y="195" textAnchor="middle" fontFamily="monospace" fontSize="13" fill="var(--muted-foreground)">
+        INTERNET
+      </text>
+
+      {/* Zonas */}
+      {ZONES.map((zone) => {
+        const { cx, cy } = POS[zone.id];
+        const a = ACCENTS[zone.id];
+        const active = zone.id === selectedId;
+        return (
+          <g
+            key={zone.id}
+            role="button"
+            tabIndex={0}
+            aria-pressed={active}
+            aria-label={`Zona ${zone.code} ${zone.name}`}
+            className="cursor-pointer outline-none"
+            onClick={() => onSelect(zone.id)}
+            onKeyDown={(event) => onKey(event, zone.id)}
+          >
+            <rect
+              x={cx - NODE_W / 2}
+              y={cy - NODE_H / 2}
+              width={NODE_W}
+              height={NODE_H}
+              rx="12"
+              fill="var(--card)"
+              stroke={active ? a.cssVar : "var(--border)"}
+              strokeWidth={active ? 2 : 1.25}
+              strokeDasharray={zone.classified && !active ? "5 4" : undefined}
+              style={active ? { filter: `drop-shadow(0 0 9px ${a.cssVar})` } : undefined}
+            />
+            <text
+              x={cx}
+              y={cy - 2}
+              textAnchor="middle"
+              fontFamily="monospace"
+              fontSize="15"
+              fontWeight="700"
+              fill={a.cssVar}
+            >
+              {zone.code}
+            </text>
+            <text x={cx} y={cy + 16} textAnchor="middle" fontSize="12.5" fill="var(--foreground)">
+              {zone.name}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
 
 export function NetworkMap() {
   const [selectedId, setSelectedId] = useState<ZoneId>(ZONES[0].id);
@@ -191,6 +305,39 @@ export function NetworkMap() {
             </AnimatePresence>
           </div>
         </div>
+
+        {/* Esquema de topología */}
+        <motion.div
+          className="mt-12 rounded-2xl border border-border bg-card/30 p-4 sm:p-6"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <div className="mb-4 flex items-center justify-between gap-4">
+            <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+              Topología
+            </p>
+            <p className="hidden font-mono text-[11px] text-muted-foreground sm:block">
+              clic en una zona para ver el detalle
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <NetworkSchematic selectedId={selectedId} onSelect={setSelectedId} />
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block h-px w-5 bg-border" />
+              flujo de red
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block w-5 border-t border-dashed border-cero/60" />
+              tráfico sin documentar
+            </span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
