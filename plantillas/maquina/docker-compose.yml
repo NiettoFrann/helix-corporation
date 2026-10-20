@@ -1,0 +1,10 @@
+services:
+  __MAQUINA__:
+    build: .
+    image: helix/__MAQUINA__
+    container_name: helix-__MAQUINA__
+    hostname: __MAQUINA__
+    ports:
+      # Solo localhost: la máquina es vulnerable a propósito.
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped

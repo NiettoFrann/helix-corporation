@@ -1,0 +1,16 @@
+# Ficha de la máquina. La usan los índices de zona y el expediente.
+nombre: __MAQUINA__
+zona: __ZONA__
+hostname: __MAQUINA__.helixcorp.local
+ip_narrativa: __IP__
+dificultad: facil            # facil | medio | dificil
+categorias: []               # ej. [web, sqli, escalada-de-privilegios]
+puertos: [8080]              # puertos que expone en localhost
+estado: borrador             # borrador | jugable | retirada
+autor: NiettoFran
+
+historia:
+  fragmento: F-XX            # ID en lore/proyecto-cero/expediente.md
+  personajes: []             # ej. [diego-ferreyra, silvia-dominguez]
+  comunicados: []            # archivos de lore/comunicados/ relacionados
+  despues_de: []             # máquinas cuyo fragmento conviene leer antes
