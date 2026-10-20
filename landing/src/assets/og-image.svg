@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'JetBrains Mono', monospace">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.025"/>
+    </pattern>
+    <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D61C4E" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#D61C4E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="#0B0B0F"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="300" cy="120" r="360" fill="url(#glowCyan)"/>
+  <circle cx="965" cy="320" r="300" fill="url(#glowRed)"/>
+
+  <!-- Emblema doble hélice (watermark) -->
+  <g transform="translate(965 320) scale(8.2) translate(-24 -24)" stroke-linecap="round" fill="none">
+    <path d="M15 8 C 21 16, 21 32, 15 40" stroke="#D61C4E" stroke-width="6" opacity="0.18"/>
+    <path d="M33 8 C 27 16, 27 32, 33 40" stroke="#38BDF8" stroke-width="6" opacity="0.14"/>
+    <path d="M15 8 C 21 16, 21 32, 15 40" stroke="#F4F4F6" stroke-width="2.4"/>
+    <path d="M33 8 C 27 16, 27 32, 33 40" stroke="#D61C4E" stroke-width="2.4"/>
+    <line x1="16.5" y1="14" x2="31.5" y2="14" stroke="#9A9AA6" stroke-width="2"/>
+    <line x1="16.5" y1="34" x2="31.5" y2="34" stroke="#9A9AA6" stroke-width="2"/>
+    <line x1="19.5" y1="24" x2="28.5" y2="24" stroke="#F4F4F6" stroke-width="3"/>
+  </g>
+
+  <!-- Barra de terminal -->
+  <rect x="0" y="0" width="1200" height="56" fill="#13131A"/>
+  <line x1="0" y1="56" x2="1200" y2="56" stroke="#26262F" stroke-width="1"/>
+  <circle cx="30" cy="28" r="6" fill="#E5484D"/>
+  <circle cx="54" cy="28" r="6" fill="#F5A524"/>
+  <circle cx="78" cy="28" r="6" fill="#3DF57E"/>
+  <text x="112" y="35" font-size="20" fill="#9A9AA6">helix-corp@10.0.4.12: ~/la-mano-negra</text>
+
+  <!-- Prompt -->
+  <text x="80" y="150" font-size="23" fill="#38BDF8" letter-spacing="1">$ ./acceso --target HELIX_CORP --as lamanonegra</text>
+
+  <!-- Wordmark -->
+  <text x="78" y="300" font-size="140" font-weight="700" fill="#F4F4F6" letter-spacing="12">HELIX</text>
+  <text x="84" y="352" font-size="40" fill="#9A9AA6" letter-spacing="10">CORPORATION</text>
+
+  <!-- Lema -->
+  <text x="82" y="432" font-size="30" fill="#D61C4E">«Ninguna corporación es intocable»</text>
+
+  <!-- Divisor -->
+  <line x1="82" y1="474" x2="600" y2="474" stroke="#26262F" stroke-width="1"/>
+
+  <!-- Chip de estado -->
+  <rect x="82" y="500" width="286" height="40" rx="8" fill="#D61C4E"/>
+  <text x="102" y="526" font-size="19" font-weight="700" fill="#0B0B0F" letter-spacing="1">STATUS: COMPROMISED</text>
+
+  <rect x="384" y="500" width="196" height="40" rx="8" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+  <text x="404" y="526" font-size="19" fill="#38BDF8" letter-spacing="1">LA MANO NEGRA</text>
+
+  <!-- Meta -->
+  <text x="82" y="585" font-size="20" fill="#6B6B78" letter-spacing="2">DOCKER · CTF · PENTESTING · PRIVESC · EDUCATIVO</text>
+</svg>
