@@ -1,0 +1,13 @@
+{
+  "name": "HELIX Corporation",
+  "short_name": "HELIX",
+  "description": "Laboratorios de ciberseguridad en Docker envueltos en un universo narrativo propio.",
+  "lang": "es",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0F",
+  "theme_color": "#0B0B0F",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
