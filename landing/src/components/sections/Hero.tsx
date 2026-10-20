@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink, FileText } from "lucide-react";
+import { motion, type Variants } from "motion/react";
 
 import { Logo } from "@/components/layout/Logo";
 import { buttonVariants } from "@/components/ui/button";
@@ -23,6 +24,16 @@ const TONE_CLASS: Record<Tone, string> = {
   muted: "text-muted-foreground",
   warn: "text-primary",
   ok: "text-ok",
+};
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.12 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
 
 export function Hero() {
@@ -53,7 +64,12 @@ export function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col gap-14 px-4 py-10 sm:px-6 sm:py-16 lg:gap-16 lg:py-24">
         {/* Barra superior */}
-        <div className="flex items-center justify-between">
+        <motion.div
+          className="flex items-center justify-between"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <Logo />
           <a
             href={SITE.repo}
@@ -64,37 +80,48 @@ export function Hero() {
             GitHub
             <ExternalLink />
           </a>
-        </div>
+        </motion.div>
 
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           {/* Columna de texto */}
-          <div className="flex flex-col items-start gap-6">
-            <p className="font-mono text-sm text-system">
+          <motion.div
+            className="flex flex-col items-start gap-6"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.p variants={item} className="font-mono text-sm text-system">
               <span className="text-muted-foreground">$</span> ./acceso --target HELIX_CORP
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap items-center gap-2">
+            <motion.div variants={item} className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center rounded-md bg-primary px-2.5 py-1 font-mono text-xs font-semibold tracking-wide text-primary-foreground">
                 STATUS: COMPROMISED
               </span>
               <span className="inline-flex items-center rounded-md border border-system/40 px-2.5 py-1 font-mono text-xs tracking-wide text-system">
                 CLEARANCE: UNAUTHORIZED
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <motion.h1
+              variants={item}
+              className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+            >
               Ninguna corporación
               <br />
               es <span className="text-primary">intocable</span>.
-            </h1>
+            </motion.h1>
 
-            <p className="max-w-xl text-pretty text-base text-muted-foreground sm:text-lg">
+            <motion.p
+              variants={item}
+              className="max-w-xl text-pretty text-base text-muted-foreground sm:text-lg"
+            >
               HELIX Corp cayó. La Mano Negra empaquetó su red interna en contenedores
               para que repitas el acceso, máquina por máquina, sin arriesgar nada real.
               Cada flag que consigas abre un fragmento del expediente.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <motion.div variants={item} className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href="#red"
                 className={cn(buttonVariants({ size: "lg" }), "h-11 gap-2 px-5 text-sm sm:text-base")}
@@ -112,11 +139,16 @@ export function Hero() {
                 <FileText />
                 Leer el expediente
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Terminal */}
-          <div className="w-full overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40">
+          <motion.div
+            className="w-full overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40"
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+          >
             <div className="flex items-center gap-2 border-b border-border bg-muted/40 px-4 py-2.5">
               <span className="h-3 w-3 rounded-full bg-destructive" />
               <span className="h-3 w-3 rounded-full bg-warn" />
@@ -135,8 +167,8 @@ export function Hero() {
                     {i === lastRendered && (
                       <span
                         className={cn(
-                          "ml-0.5 inline-block w-2 translate-y-0.5 bg-foreground",
-                          done ? "h-4 animate-pulse" : "h-4",
+                          "ml-0.5 inline-block h-4 w-2 translate-y-0.5 bg-foreground",
+                          done && "animate-pulse",
                         )}
                       >
                         &nbsp;
@@ -146,7 +178,7 @@ export function Hero() {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
