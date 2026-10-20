@@ -149,6 +149,6 @@ El paso a paso está en [`docs/crear-una-maquina.md`](docs/crear-una-maquina.md)
 
 <img src="lore/assets/la-mano-negra-horizontal.svg" alt="La Mano Negra — Ninguna corporación es intocable" width="480" />
 
-Mantenido por [NiettoFran](https://github.com/NiettoFran)
+Mantenido por [NiettoFrann](https://github.com/NiettoFrann)
 
 </div>
