@@ -1,0 +1,11 @@
+services:
+  portal-empleados:
+    build: .
+    image: helix/portal-empleados
+    container_name: helix-portal-empleados
+    hostname: portal-empleados
+    ports:
+      # Solo localhost: la máquina es vulnerable a propósito.
+      - "127.0.0.1:8080:80"
+      - "127.0.0.1:2222:22"
+    restart: unless-stopped

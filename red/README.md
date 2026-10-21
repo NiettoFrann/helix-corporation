@@ -4,7 +4,7 @@ Cada carpeta es una zona de la red interna de HELIX Corp, y cada subcarpeta es u
 
 | Zona | Dificultad | Máquinas |
 | :-- | :--: | :--: |
-| [`00-perimetro/`](00-perimetro/) | 🟢 | 0 |
+| [`00-perimetro/`](00-perimetro/) | 🟢 | 1 |
 | [`01-corporativo/`](01-corporativo/) | 🟢 🟡 | 0 |
 | [`02-clientes/`](02-clientes/) | 🟡 | 0 |
 | [`03-legado/`](03-legado/) | 🟡 🔴 | 0 |

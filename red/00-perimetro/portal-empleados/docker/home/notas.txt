@@ -1,0 +1,14 @@
+PENDIENTES (que nadie me aprueba)
+=================================
+
+- El "directorio de empleados" del portal lo pidió RRHH para ayer, en 2019.
+  Lo armé en una tarde. Funciona. Nadie lo volvió a mirar desde entonces.
+
+- Pedí tres veces separar la cuenta del portal de mi usuario del sistema.
+  Respuesta de siempre: "mas adelante". Uso la misma clave para no perder
+  tiempo. Ya se, ya se.
+
+- Migrar esto a algo decente antes de que alguien lo encuentre.
+  (escrito en 2019, 2020, 2021, 2022 y 2023)
+
+                                                        - D.F.

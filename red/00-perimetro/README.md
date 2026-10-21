@@ -13,6 +13,6 @@ Es la puerta de entrada. Ideal para practicar lo básico: enumeración, servicio
 
 | Máquina | Dificultad | Categorías | Fragmento |
 | :-- | :--: | :-- | :--: |
-| *Todavía no hay máquinas en esta zona.* | | | |
+| [`portal-empleados`](portal-empleados/) | 🟢 | web · SQLi · reúso de credenciales · escalada | F-01 |
 
 Para sumar una: [`docs/crear-una-maquina.md`](../../docs/crear-una-maquina.md).
