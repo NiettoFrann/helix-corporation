@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-
 type Tone = "prompt" | "input" | "muted" | "warn" | "ok" | "cero";
 
 interface Line {
@@ -58,21 +56,18 @@ function LineView({ line, caret }: { line: Line; caret: boolean }) {
   );
 }
 
+/**
+ * Terminal del hero: tipea el boot y después ejecuta comandos ambientales en
+ * bucle para sentirse viva. El tipeo es contenido narrativo, así que corre
+ * siempre (no depende de `prefers-reduced-motion`).
+ */
 export function LiveTerminal() {
-  const reduced = usePrefersReducedMotion();
   const [lines, setLines] = useState<Line[]>([]);
   const [active, setActive] = useState<Line | null>(null);
 
   useEffect(() => {
-    if (reduced) {
-      setLines([...BOOT, { prefix: PROMPT, text: "status proyecto-cero", tone: "input" }, COMMANDS[4].out[0]]);
-      setActive(null);
-      return;
-    }
-
     let cancelled = false;
-    const push = (line: Line) =>
-      setLines((prev) => [...prev, line].slice(-MAX_LINES));
+    const push = (line: Line) => setLines((prev) => [...prev, line].slice(-MAX_LINES));
 
     const type = async (line: Line, speed: number) => {
       const full = line.text;
@@ -112,7 +107,7 @@ export function LiveTerminal() {
     return () => {
       cancelled = true;
     };
-  }, [reduced]);
+  }, []);
 
   const lastIndex = lines.length - 1;
 
