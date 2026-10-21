@@ -20,7 +20,7 @@ openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -a \
 
 | ID | Zona | Máquina | Estado |
 | :-: | :-- | :-- | :-- |
-| — | — | *Todavía no hay fragmentos publicados.* | — |
+| F-01 | 00 · Perímetro | [`portal-empleados`](../../red/00-perimetro/portal-empleados/) | 🔒 Cifrado |
 
 <!--
 Formato de cada fila cuando se suma una máquina:
