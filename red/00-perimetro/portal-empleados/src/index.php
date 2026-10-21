@@ -42,7 +42,13 @@ helix_head('Ingresar', false);
       </div>
       <div class="field">
         <label for="clave">Contraseña</label>
-        <input type="password" id="clave" name="clave">
+        <div class="pass-wrap">
+          <input type="password" id="clave" name="clave" placeholder="********">
+          <button type="button" class="pass-toggle" id="toggle-clave" aria-label="Mostrar contraseña" aria-pressed="false">
+            <svg class="eye-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg class="eye-closed" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"/><path d="M10.6 5.1A10.8 10.8 0 0 1 12 5c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.6 6.6A17.4 17.4 0 0 0 2 12s3.5 7 10 7a10.4 10.4 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+          </button>
+        </div>
       </div>
       <button class="btn" type="submit">Ingresar</button>
     </form>
@@ -51,4 +57,17 @@ helix_head('Ingresar', false);
     </p>
   </div>
 </div>
+<script>
+  (function () {
+    var input = document.getElementById('clave');
+    var btn = document.getElementById('toggle-clave');
+    btn.addEventListener('click', function () {
+      var show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      btn.setAttribute('aria-pressed', String(show));
+      btn.setAttribute('aria-label', show ? 'Ocultar contraseña' : 'Mostrar contraseña');
+      input.focus();
+    });
+  })();
+</script>
 <?php helix_foot();

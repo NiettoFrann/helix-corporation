@@ -99,6 +99,26 @@ input[type=text], input[type=password], input[type=search] {
 }
 input:focus { outline: none; border-color: var(--system); }
 
+.pass-wrap { position: relative; }
+.pass-wrap input { padding-right: 2.6rem; }
+.pass-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  padding: 0.35rem;
+  background: none;
+  border: 0;
+  border-radius: calc(var(--radius) * 0.5);
+  color: var(--muted-foreground);
+  cursor: pointer;
+}
+.pass-toggle:hover, .pass-toggle:focus-visible { color: var(--system); outline: none; }
+.pass-toggle .eye-closed { display: none; }
+.pass-toggle[aria-pressed="true"] .eye-open { display: none; }
+.pass-toggle[aria-pressed="true"] .eye-closed { display: inline; }
+
 .btn {
   display: inline-flex;
   align-items: center;
