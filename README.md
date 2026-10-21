@@ -123,7 +123,7 @@ helix-corporation/
 ├── plantillas/maquina/           # esqueleto que copia nueva-maquina.sh
 └── herramientas/
     ├── nueva-maquina.sh          # crea una máquina desde la plantilla
-    ├── sellar-fragmento.sh       # cifra el fragmento con la flag
+    ├── cifrar-fragmento.sh       # cifra el fragmento con la flag
     └── abrir-fragmento.sh        # lo descifra (para quien juega)
 ```
 
