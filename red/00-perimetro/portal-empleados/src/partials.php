@@ -4,6 +4,8 @@
 function helix_head(string $title, bool $with_nav = true): void
 {
     $t = htmlspecialchars($title, ENT_QUOTES);
+    // Versión del CSS para que el navegador no sirva una copia vieja de caché.
+    $v = @filemtime(__DIR__ . '/assets/style.css') ?: 1;
     echo <<<HTML
 <!doctype html>
 <html lang="es">
@@ -11,7 +13,7 @@ function helix_head(string $title, bool $with_nav = true): void
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$t · HELIX Corp</title>
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=$v">
 </head>
 <body>
 HTML;
