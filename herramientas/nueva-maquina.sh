@@ -65,7 +65,7 @@ Máquina creada en red/$zona/$nombre
 Siguientes pasos:
   1. Construí la máquina (Dockerfile, src/, docker-compose.yml).
   2. Escribí la historia en _privado/fragmento.md y la solución en _privado/writeup.md.
-  3. Sellá el fragmento: ./herramientas/sellar-fragmento.sh red/$zona/$nombre
+  3. Cifrá el fragmento: ./herramientas/cifrar-fragmento.sh red/$zona/$nombre
   4. Sumala a red/$zona/README.md y a lore/proyecto-cero/expediente.md.
 
 Guía completa: docs/crear-una-maquina.md
