@@ -1,7 +1,7 @@
 # Miembros de La Mano Negra
 
 <p align="center">
-  <img src="../assets/la-mano-negra-emblema.svg" alt="La Mano Negra" width="120" />
+  <img src="../../assets/la-mano-negra/emblema.svg" alt="La Mano Negra" width="120" />
 </p>
 
 Estos son los handles que aparecen con más frecuencia en los logs de acceso reconstruidos.

@@ -1,6 +1,16 @@
-# La red de HELIX
+<div align="center">
+
+<img src="../assets/branding/la-red.svg" alt="La red de HELIX — cinco zonas" width="100%" />
+
+</div>
+
+<div align="justify">
 
 Cada carpeta es una zona de la red interna de HELIX Corp, y cada subcarpeta es una máquina. Cuanto más alto el número, más profunda la zona, más difíciles las máquinas y más cerca de Proyecto Cero. El contexto de cada zona está en el [mapa de red](../lore/mapa-de-red.md).
+
+</div>
+
+<div align="center">
 
 | Zona | Dificultad | Máquinas |
 | :-- | :--: | :--: |
@@ -10,10 +20,12 @@ Cada carpeta es una zona de la red interna de HELIX Corp, y cada subcarpeta es u
 | [`03-legado/`](03-legado/) | 🟡 🔴 | 0 |
 | [`04-proyecto-cero/`](04-proyecto-cero/) | 🔴 | 0 |
 
+</div>
+
 ## Anatomía de una máquina
 
 ```
-red/<zona>/<maquina>/
+red/<zona>/<NN-maquina>/
 ├── README.md            # briefing, objetivo, cómo levantarla, pistas
 ├── maquina.yml          # ficha: dificultad, categorías, puertos, fragmento
 ├── docker-compose.yml
@@ -31,7 +43,11 @@ docker compose down -v && docker compose up -d    # resetear
 docker compose down -v                            # apagar y limpiar
 ```
 
+<div align="justify">
+
 Con la flag en mano, desde la raíz del repo:
+
+</div>
 
 ```bash
 ./herramientas/abrir-fragmento.sh red/<zona>/<maquina> 'HELIX{...}'

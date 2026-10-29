@@ -1,16 +1,20 @@
-# La Mano Negra
+<div align="center">
 
-<p align="center">
-  <img src="../assets/la-mano-negra-sello.svg" alt="La Mano Negra — Ninguna corporación es intocable" width="220" />
-</p>
+<img src="../../assets/lore/la-mano-negra.svg" alt="La Mano Negra — ninguna corporación es intocable" width="100%" />
+
+</div>
 
 > *"Ninguna corporación es intocable."*
 
 ## Qué es
 
+<div align="justify">
+
 Una organización descentralizada, sin jerarquía fija, sin oficina, sin nómina. Se organiza por afinidad y por objetivo. Nadie conoce la cara de nadie, y así está bien.
 
 No entran por plata. Entran porque alguien tiene que auditar lo que las corporaciones prometen y no cumplen, y porque cuando una empresa de seguridad es insegura, los que pagan no son sus accionistas: son sus clientes.
+
+</div>
 
 ## Principios
 
@@ -27,11 +31,21 @@ Así:
 $ git clone helix-corporation
 ```
 
+<div align="justify">
+
 Cada máquina que resolvés es una parte del acceso de La Mano Negra a HELIX que acabás de repetir por tu cuenta. Cada flag abre un [fragmento del expediente](../proyecto-cero/expediente.md).
+
+</div>
 
 ## Rangos
 
+<div align="justify">
+
 La Mano Negra no tiene jerarquía, pero sí tiene memoria. Los rangos no dan poder: dicen cuánto viste.
+
+</div>
+
+<div align="center">
 
 | Rango | Cuándo | Qué significa |
 | :-- | :-- | :-- |
@@ -40,6 +54,8 @@ La Mano Negra no tiene jerarquía, pero sí tiene memoria. Los rangos no dan pod
 | **Mano** | Llegaste a la zona 03. | Sabés qué es `reportes-legacy-02`. |
 | **Puño** | Resolviste una máquina de Proyecto Cero. | Ya no hay vuelta atrás. |
 | **Sombra** | Abriste el último fragmento. | Sabés todo lo que sabe Root. Casi. |
+
+</div>
 
 ## En esta carpeta
 
