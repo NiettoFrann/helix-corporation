@@ -1,0 +1,11 @@
+cd /var/www/html
+vsftpd -v
+systemctl status vsftpd
+ls -l /srv/ftp/respaldos
+gcc -O2 -o /usr/local/bin/respaldo-web respaldo-web.c
+chmod 4755 /usr/local/bin/respaldo-web
+./respaldo-web && ls -lh /var/backups
+echo "listo, el del servidor ya puede tirar el respaldo sin molestarme. temporal igual"
+crontab -l
+clear
+history -w

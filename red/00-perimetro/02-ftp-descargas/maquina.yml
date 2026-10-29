@@ -1,0 +1,16 @@
+# Ficha de la máquina. La usan los índices de zona y el expediente.
+nombre: ftp-descargas
+zona: 00-perimetro
+hostname: ftp-descargas.helixcorp.local
+ip_narrativa: 10.0.0.12
+dificultad: facil            # facil | medio | dificil
+categorias: [ftp, webdav, rce, path-hijacking, escalada-de-privilegios]
+puertos: [8080, 21, 30000-30009]   # 8080 web, 21 ftp, 30000-30009 pasivo. Solo localhost.
+estado: jugable              # borrador | jugable | retirada
+autor: NiettoFran
+
+historia:
+  fragmento: F-03            # ID en lore/proyecto-cero/expediente.md
+  personajes: [diego-ferreyra]
+  comunicados: []            # sin comunicado público asociado
+  despues_de: [portal-empleados, web-institucional]
