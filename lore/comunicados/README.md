@@ -5,6 +5,7 @@
 | Fecha | Tipo | Comunicado | Zona |
 | :-- | :-- | :-- | :-- |
 | 2019-07 | 📧 Email | [¡Estrenamos Portal de Autogestión!](2019-07-portal-nuevo.md) | 00 · Perímetro |
+| 2019-09 | 📄 Prensa | [HELIX presenta su nueva identidad](2019-09-blindamos-el-futuro.md) | 00 · Perímetro |
 | 2023-03 | 📧 Email | [Viernes casual y política de contraseñas](2023-03-viernes-casual.md) | 01 · Corporativo |
 | 2023-11 | 📧 Email | [RE: Propuesta de auditoría externa](2023-11-auditoria-cancelada.md) | 01 · Corporativo |
 | 2024-06 | 🎫 Ticket | [Reclamo de cliente: consumo de VIGÍA](2024-06-reclamo-vigia.md) | 02 · Clientes |

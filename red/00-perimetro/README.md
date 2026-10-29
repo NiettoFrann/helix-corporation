@@ -13,6 +13,8 @@ Es la puerta de entrada. Ideal para practicar lo básico: enumeración, servicio
 
 | Máquina | Dificultad | Categorías | Fragmento |
 | :-- | :--: | :-- | :--: |
-| [`portal-empleados`](portal-empleados/) | 🟢 | web · SQLi · reúso de credenciales · escalada | F-01 |
+| [`portal-empleados`](00-portal-empleados/) | 🟢 | web · SQLi · reúso de credenciales · escalada | F-01 |
+| [`web-institucional`](01-web-institucional/) | 🟢 | web · CMS · subida de archivos · RCE · escalada | F-02 |
+| [`ftp-descargas`](02-ftp-descargas/) | 🟢 | FTP · WebDAV · RCE · PATH hijacking · escalada | F-03 |
 
 Para sumar una: [`docs/crear-una-maquina.md`](../../docs/crear-una-maquina.md).
