@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" width="1000" height="180" role="img" aria-label="Zona 02 — Clientes — 10.0.2.0/24">
+  <defs>
+    <linearGradient id="z2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0B0F"/>
+      <stop offset="1" stop-color="#15120C"/>
+    </linearGradient>
+    <radialGradient id="z2glow" cx="0%" cy="50%" r="80%">
+      <stop offset="0" stop-color="#E0A23C" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#E0A23C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="180" rx="14" fill="url(#z2bg)"/>
+  <rect width="1000" height="180" rx="14" fill="url(#z2glow)"/>
+  <rect x="1" y="1" width="998" height="178" rx="13" fill="none" stroke="#2A2A3A"/>
+  <rect x="0" y="0" width="6" height="180" rx="3" fill="#E0A23C"/>
+
+  <text x="54" y="118" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="104" font-weight="800" fill="#E0A23C" opacity="0.95">02</text>
+
+  <text x="250" y="78" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="2" fill="#E8E6E3">CLIENTES</text>
+  <text x="252" y="108" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="16" fill="#8A8A99">10.0.2.0/24</text>
+  <text x="252" y="138" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="15" fill="#E0A23C">// productos y datos de terceros<tspan fill="#E8E6E3">_</tspan></text>
+
+  <circle cx="900" cy="44" r="6" fill="#E0A23C"/>
+  <text x="914" y="49" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="15" fill="#8A8A99">MEDIO</text>
+
+  <g stroke="#2A2A3A" stroke-width="1.5" fill="none">
+    <line x1="812" y1="110" x2="872" y2="92"/>
+    <line x1="872" y1="92" x2="932" y2="120"/>
+    <line x1="812" y1="110" x2="872" y2="138"/>
+    <line x1="872" y1="138" x2="932" y2="120"/>
+  </g>
+  <g fill="#0B0B0F" stroke="#E0A23C" stroke-width="1.6">
+    <circle cx="812" cy="110" r="7"/>
+    <circle cx="872" cy="92" r="7"/>
+    <circle cx="932" cy="120" r="7"/>
+    <circle cx="872" cy="138" r="7"/>
+  </g>
+</svg>

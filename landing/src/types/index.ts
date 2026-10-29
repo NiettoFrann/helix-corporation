@@ -22,6 +22,19 @@ export interface Zone {
   classified?: boolean;
 }
 
+export interface Machine {
+  /** Carpeta en `red/<zona>/`, ej. "00-portal-empleados". */
+  slug: string;
+  /** Nombre de la máquina (hostname en el mundo), ej. "portal-empleados". */
+  name: string;
+  zoneId: ZoneId;
+  difficulty: Difficulty;
+  /** ID del fragmento que suelta, ej. "F-01". */
+  fragment: string;
+  /** Gancho narrativo. NUNCA spoilea la vulnerabilidad. */
+  teaser: string;
+}
+
 export type Faction = "helix" | "la-mano-negra";
 
 export interface Character {

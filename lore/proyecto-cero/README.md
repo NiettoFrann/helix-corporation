@@ -1,12 +1,22 @@
-# Proyecto Cero
+<div align="center">
+
+<img src="../../assets/lore/proyecto-cero.svg" alt="Proyecto Cero — clasificado" width="100%" />
+
+</div>
+
+<div align="justify">
 
 **Clasificación:** ~~PÚBLICA~~ INTERNA. Reconstruido por La Mano Negra a partir de fragmentos.
 
 Este documento resume lo que se sabe *sin* haber resuelto ninguna máquina. Lo demás está en el [expediente](expediente.md), y hay que ganárselo.
 
----
+</div>
+
+<img src="../../assets/branding/divider.svg" alt="" width="100%" />
 
 ## Lo que se sabe
+
+<div align="justify">
 
 - Proyecto Cero no figura en el [organigrama oficial](../helix/organigrama.md) de HELIX Corp.
 - Se financia con una línea de presupuesto que Finanzas no puede explicar en ninguna auditoría.
@@ -15,18 +25,28 @@ Este documento resume lo que se sabe *sin* haber resuelto ninguna máquina. Lo d
 - A diferencia del resto de la infraestructura de HELIX (vieja, mal parchada, con configuraciones por defecto), los sistemas de Proyecto Cero están **bien defendidos**.
 - Cada vez que un investigador externo se acerca demasiado, HELIX gasta sumas desproporcionadas en "servicios de consultoría forense" que, en la práctica, borran logs.
 
+</div>
+
 ## Lo que se rumorea
+
+<div align="justify">
 
 - Que no es un producto, sino una operación. Nadie se pone de acuerdo en una operación de qué.
 - Que "Cero" no es un nombre que eligió marketing, sino el hostname del primer servidor que se levantó, y que nunca lo cambiaron.
 - Que al menos una persona del directorio de HELIX sabe exactamente qué es, y que no es Marcus Voss.
 - Que tiene algo que ver con VIGÍA. Nadie sabe qué.
 
+</div>
+
 ## Línea de tiempo
 
 Ver la [cronología](../cronologia.md) general.
 
----
+<img src="../../assets/branding/divider.svg" alt="" width="100%" />
+
+<div align="center">
 
 _"Preguntale a cualquiera en HELIX qué es Proyecto Cero y te va a mirar como si le hubieras preguntado en qué planeta está parado. Preguntale al VP de Legal y te va a cambiar de tema en menos de tres segundos. Ese es el dato más útil que tenemos hasta ahora."_
 — Root, La Mano Negra
+
+</div>

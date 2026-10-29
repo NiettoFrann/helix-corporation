@@ -1,0 +1,16 @@
+# Ficha de la máquina. La usan los índices de zona y el expediente.
+nombre: web-institucional
+zona: 00-perimetro
+hostname: web-institucional.helixcorp.local
+ip_narrativa: 10.0.0.11
+dificultad: facil            # facil | medio | dificil
+categorias: [web, cms, subida-de-archivos, rce, escalada-de-privilegios]
+puertos: [8080]              # 8080 -> web (solo localhost). Sin SSH.
+estado: jugable              # borrador | jugable | retirada
+autor: NiettoFran
+
+historia:
+  fragmento: F-02            # ID en lore/proyecto-cero/expediente.md
+  personajes: [marcus-voss, diego-ferreyra]
+  comunicados: [2019-09-blindamos-el-futuro.md]
+  despues_de: [portal-empleados]   # conviene leer F-01 antes

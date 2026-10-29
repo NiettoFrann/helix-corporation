@@ -1,0 +1,12 @@
+HelixCMS 1.4 — Guía de instalación (Sistemas HELIX, 2019)
+=========================================================
+
+1. Copiar el contenido de cms/ al servidor web.
+2. Revisar cms/config.php: usuario y clave del panel, y las rutas de
+   subida de medios.
+3. El usuario inicial es "admin". CAMBIAR la clave por defecto después
+   de la primera instalación (ver config.php).
+4. Dar permiso de escritura a la carpeta de subidas (uploads/).
+
+Respaldo de esta instalación generado automáticamente.
+No dejar este archivo accesible desde el sitio público.

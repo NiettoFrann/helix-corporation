@@ -2,7 +2,7 @@
 # Cifra _privado/fragmento.md de una máquina con su flag (_privado/flag.txt)
 # y deja el resultado en <maquina>/fragmento.enc, que es lo que se sube al repo.
 #
-# Uso: ./herramientas/sellar-fragmento.sh red/<zona>/<maquina>
+# Uso: ./herramientas/cifrar-fragmento.sh red/<zona>/<maquina>
 set -euo pipefail
 
 dir="${1:-}"
@@ -45,7 +45,7 @@ openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -a \
 # Verificación: tiene que descifrar exactamente al original.
 if openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -a \
      -in "$cifrado" -pass env:FRAGMENTO_PASS | cmp -s - "$plano"; then
-  echo "Fragmento sellado: $cifrado"
+  echo "Fragmento cifrado: $cifrado"
 else
   echo "Error: el fragmento cifrado no descifra igual al original." >&2
   exit 1

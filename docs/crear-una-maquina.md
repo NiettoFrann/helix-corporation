@@ -55,10 +55,10 @@ Leé la [guía narrativa](guia-narrativa.md). En resumen, cada máquina cuenta s
 2. **Narrativa ambiental** (dentro de la máquina): mails, `.bash_history`, notas, crons, logs. Lo que encuentra quien explora.
 3. **Fragmento** (`_privado/fragmento.md` → `fragmento.enc`): la revelación, que solo se lee con la flag.
 
-## 5. Sellar el fragmento
+## 5. Cifrar el fragmento
 
 ```bash
-./herramientas/sellar-fragmento.sh red/00-perimetro/portal-empleados
+./herramientas/cifrar-fragmento.sh red/00-perimetro/portal-empleados
 ```
 
 Cifra `_privado/fragmento.md` con la flag y genera `fragmento.enc` (ese sí se sube). Verifica que descifre bien y avisa si la flag del `Dockerfile` no coincide. Volvé a correrlo cada vez que edites el fragmento.

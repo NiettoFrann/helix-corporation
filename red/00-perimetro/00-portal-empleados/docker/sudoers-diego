@@ -1,0 +1,3 @@
+# Diego necesitaba resolver una limpieza de logs recurrente sin que le pidiera
+# la clave en cada corrida. Lo dejó así "hasta encontrar una mejor forma".
+diego.ferreyra ALL=(ALL) NOPASSWD: /usr/bin/find
