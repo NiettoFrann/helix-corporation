@@ -1,0 +1,27 @@
+# red-interna.bak — respaldo del inventario de hosts internos
+# Generado por el script de inventario de Sistemas. Se actualiza solo.
+# NO PUBLICAR. (quedó en la carpeta equivocada)
+
+# --- Perímetro (DMZ) --- 10.0.0.0/24
+10.0.0.10   portal-empleados.helixcorp.local
+10.0.0.11   web-institucional.helixcorp.local
+10.0.0.12   ftp-descargas.helixcorp.local        # este server (temporal, 2017)
+10.0.0.20   vpn.helixcorp.local
+
+# --- Corporativo (intranet) --- 10.0.1.0/24
+10.0.1.10   intranet.helixcorp.local
+10.0.1.20   wiki-it.helixcorp.local
+10.0.1.30   mesa-de-ayuda.helixcorp.local
+10.0.1.40   samba-rrhh.helixcorp.local
+
+# --- Clientes --- 10.0.2.0/24
+10.0.2.10   portal-clientes.helixcorp.local
+10.0.2.20   consola-vigia.helixcorp.local         # panel de VIGÍA
+
+# --- Legado (adquisiciones) --- 10.0.3.0/24
+10.0.3.10   reportes-legacy-02.helixcorp.local    # LEGACY - NO TOCAR - no apagar
+10.0.3.20   archivo-umbral.helixcorp.local
+
+# nota del que mantiene esto:
+#   el bloque 10.0.3.x vino con "lo de afuera". no lo administra Sistemas.
+#   para accesos a esa red hablar con Legal. (?)

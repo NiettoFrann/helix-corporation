@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 170" width="1000" height="170" role="img" aria-label="ftp-descargas — Zona 00 Perímetro — Fácil — fragmento F-03">
+  <defs>
+    <linearGradient id="m3bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0B0F"/>
+      <stop offset="1" stop-color="#101418"/>
+    </linearGradient>
+    <radialGradient id="m3glow" cx="100%" cy="50%" r="70%">
+      <stop offset="0" stop-color="#4FC3DC" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#4FC3DC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="170" rx="14" fill="url(#m3bg)"/>
+  <rect width="1000" height="170" rx="14" fill="url(#m3glow)"/>
+  <rect x="1" y="1" width="998" height="168" rx="13" fill="none" stroke="#2A2A3A"/>
+  <rect x="0" y="0" width="6" height="170" rx="3" fill="#4FC3DC"/>
+
+  <rect x="54" y="34" width="70" height="26" rx="13" fill="none" stroke="#C1121F"/>
+  <text x="89" y="52" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#C1121F">F-03</text>
+  <text x="140" y="52" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#8A8A99">ZONA 00 · PERÍMETRO</text>
+
+  <text x="54" y="104" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="42" font-weight="700" fill="#E8E6E3">ftp-descargas</text>
+
+  <circle cx="62" cy="134" r="6" fill="#3DF57E"/>
+  <text x="76" y="139" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#3DF57E">FÁCIL</text>
+  <text x="150" y="139" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#8A8A99">// el servidor "temporal" de 2017 que nunca se apagó</text>
+
+  <!-- ícono: servidor + descarga -->
+  <g transform="translate(884 48)" fill="none" stroke="#4FC3DC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="64" height="22" rx="5"/>
+    <rect x="0" y="30" width="64" height="22" rx="5"/>
+    <circle cx="12" cy="11" r="2" fill="#4FC3DC" stroke="none"/>
+    <circle cx="12" cy="41" r="2" fill="#4FC3DC" stroke="none"/>
+    <line x1="24" y1="11" x2="52" y2="11"/>
+    <line x1="24" y1="41" x2="52" y2="41"/>
+    <g transform="translate(32 60)">
+      <line x1="0" y1="-2" x2="0" y2="14"/>
+      <path d="M-7 7 L0 15 L7 7"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 170" width="1000" height="170" role="img" aria-label="web-institucional — Zona 00 Perímetro — Fácil — fragmento F-02">
+  <defs>
+    <linearGradient id="m2bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0B0F"/>
+      <stop offset="1" stop-color="#101418"/>
+    </linearGradient>
+    <radialGradient id="m2glow" cx="100%" cy="50%" r="70%">
+      <stop offset="0" stop-color="#4FC3DC" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#4FC3DC" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="170" rx="14" fill="url(#m2bg)"/>
+  <rect width="1000" height="170" rx="14" fill="url(#m2glow)"/>
+  <rect x="1" y="1" width="998" height="168" rx="13" fill="none" stroke="#2A2A3A"/>
+  <rect x="0" y="0" width="6" height="170" rx="3" fill="#4FC3DC"/>
+
+  <rect x="54" y="34" width="70" height="26" rx="13" fill="none" stroke="#C1121F"/>
+  <text x="89" y="52" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#C1121F">F-02</text>
+  <text x="140" y="52" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#8A8A99">ZONA 00 · PERÍMETRO</text>
+
+  <text x="54" y="104" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="42" font-weight="700" fill="#E8E6E3">web-institucional</text>
+
+  <circle cx="62" cy="134" r="6" fill="#3DF57E"/>
+  <text x="76" y="139" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#3DF57E">FÁCIL</text>
+  <text x="150" y="139" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="14" fill="#8A8A99">// blindamos el futuro digital (sin actualizar desde 2019)</text>
+
+  <!-- ícono: sitio web / globo en ventana -->
+  <g transform="translate(878 50)" fill="none" stroke="#4FC3DC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="74" height="60" rx="7"/>
+    <line x1="0" y1="16" x2="74" y2="16"/>
+    <circle cx="8" cy="8" r="2" fill="#4FC3DC" stroke="none"/>
+    <circle cx="16" cy="8" r="2" fill="#4FC3DC" stroke="none"/>
+    <circle cx="37" cy="40" r="14"/>
+    <line x1="23" y1="40" x2="51" y2="40"/>
+    <path d="M37 26 C 46 33, 46 47, 37 54 C 28 47, 28 33, 37 26 Z"/>
+  </g>
+</svg>

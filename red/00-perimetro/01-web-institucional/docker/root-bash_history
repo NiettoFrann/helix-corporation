@@ -1,0 +1,11 @@
+cd /opt/helixcms/mantenimiento
+python3 respaldo.py
+crontab -l
+crontab -e
+python3 respaldo.py
+chmod u+s /usr/bin/python3.11
+echo "listo, el cron de respaldo ya corre sin pedir clave. lo dejo asi hasta mañana"
+df -h
+du -sh /var/backups/helixcms/*
+clear
+history -w

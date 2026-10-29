@@ -1,0 +1,10 @@
+services:
+  web-institucional:
+    build: .
+    image: helix/web-institucional
+    container_name: helix-web-institucional
+    hostname: web-institucional
+    ports:
+      # Solo localhost: la máquina es vulnerable a propósito.
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped

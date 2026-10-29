@@ -1,0 +1,13 @@
+services:
+  ftp-descargas:
+    build: .
+    image: helix/ftp-descargas
+    container_name: helix-ftp-descargas
+    hostname: ftp-descargas
+    ports:
+      # Solo localhost: la máquina es vulnerable a propósito.
+      - "127.0.0.1:8080:80"
+      - "127.0.0.1:21:21"
+      # Rango pasivo del FTP (coincide con vsftpd.conf).
+      - "127.0.0.1:30000-30009:30000-30009"
+    restart: unless-stopped

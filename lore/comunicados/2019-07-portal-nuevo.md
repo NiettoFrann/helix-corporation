@@ -16,4 +16,4 @@ Abrazo grande,
 
 ---
 
-*Zona: 00 · Perímetro. Relacionado con la máquina [`portal-empleados`](../../red/00-perimetro/portal-empleados/). Lo que La Mano Negra encontró mirando de cerca esta misma lista de distribución está en el fragmento `F-01`, que se abre con la flag de esa máquina.*
+*Zona: 00 · Perímetro. Relacionado con la máquina [`portal-empleados`](../../red/00-perimetro/00-portal-empleados/). Lo que La Mano Negra encontró mirando de cerca esta misma lista de distribución está en el fragmento `F-01`, que se abre con la flag de esa máquina.*

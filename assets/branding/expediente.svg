@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="1000" height="200" role="img" aria-label="Expediente HELIX — reconstruido por La Mano Negra">
+  <defs>
+    <linearGradient id="ebg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0B0F"/>
+      <stop offset="1" stop-color="#160F11"/>
+    </linearGradient>
+    <radialGradient id="eglow" cx="12%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#C1121F" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#C1121F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="elacre" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#E0303C"/>
+      <stop offset="1" stop-color="#8A0C14"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="200" rx="14" fill="url(#ebg)"/>
+  <rect width="1000" height="200" rx="14" fill="url(#eglow)"/>
+  <rect x="1" y="1" width="998" height="198" rx="13" fill="none" stroke="#2A2A3A"/>
+
+  <!-- sello de lacre -->
+  <g transform="translate(100 100)">
+    <circle r="52" fill="none" stroke="#C1121F" stroke-width="2"/>
+    <circle r="46" fill="url(#elacre)"/>
+    <g stroke="#0B0B0F" stroke-width="5" stroke-linecap="round">
+      <line x1="-16" y1="-18" x2="-22" y2="20"/>
+      <line x1="2" y1="-22" x2="-4" y2="22"/>
+      <line x1="20" y1="-18" x2="14" y2="20"/>
+      <line x1="-26" y1="-4" x2="24" y2="-4"/>
+      <line x1="-27" y1="8" x2="23" y2="8"/>
+    </g>
+  </g>
+
+  <text x="186" y="86" font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="44" font-weight="800" letter-spacing="2" fill="#E8E6E3">EXPEDIENTE HELIX</text>
+  <text x="188" y="118" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="16" fill="#8A8A99">reconstruido por La Mano Negra · comunicados, tickets, tráfico</text>
+  <text x="188" y="148" font-family="ui-monospace,'JetBrains Mono',Consolas,'Courier New',monospace" font-size="15" fill="#C1121F"># lo que sabemos, y lo que falta ganarse<tspan fill="#E8E6E3">_</tspan></text>
+</svg>

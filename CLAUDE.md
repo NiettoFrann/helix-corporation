@@ -69,6 +69,6 @@ Al publicar una máquina, actualizar **todos** estos (checklist en `docs/crear-u
 
 ## Estado actual
 
-- 1 máquina jugable: `red/00-perimetro/portal-empleados`.
+- 3 máquinas jugables en `red/00-perimetro/` (carpetas prefijadas por orden de juego): `00-portal-empleados` (F-01), `01-web-institucional` (F-02), `02-ftp-descargas` (F-03).
 - Landing en `landing/` (hero con boot sequence, mapa de red interactivo, terminal ambiente).
 - Backlog de máquinas y matriz de cobertura del temario: `_privado/ideas-de-maquinas.md`.
