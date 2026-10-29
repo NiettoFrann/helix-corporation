@@ -33,7 +33,7 @@ Resetear: `docker compose down -v && docker compose up -d`
 Con la flag, desde la raíz del repo:
 
 ```bash
-./herramientas/abrir-fragmento.sh red/00-perimetro/portal-empleados 'HELIX{...}'
+./herramientas/abrir-fragmento.sh red/00-perimetro/00-portal-empleados 'HELIX{...}'
 ```
 
 ## Pistas
