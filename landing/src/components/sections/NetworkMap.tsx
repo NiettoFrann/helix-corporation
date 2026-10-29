@@ -4,7 +4,7 @@ import { AnimatePresence, motion, type Variants } from "motion/react";
 
 import { Reveal } from "@/components/effects/Reveal";
 import { buttonVariants } from "@/components/ui/button";
-import { ZONES } from "@/data";
+import { machinesByZone, ZONES } from "@/data";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import type { Difficulty, ZoneId } from "@/types";
@@ -152,6 +152,7 @@ export function NetworkMap() {
   const [selectedId, setSelectedId] = useState<ZoneId>(ZONES[0].id);
   const selected = ZONES.find((zone) => zone.id === selectedId) ?? ZONES[0];
   const accent = ACCENTS[selectedId];
+  const machines = machinesByZone(selectedId);
 
   return (
     <section id="red" className="relative scroll-mt-20 border-t border-border/60">
@@ -288,9 +289,50 @@ export function NetworkMap() {
                   </p>
                 )}
 
+                {machines.length > 0 && (
+                  <ul className="mt-6 flex flex-col gap-2">
+                    {machines.map((machine) => (
+                      <li key={machine.slug}>
+                        <a
+                          href={`${SITE.repo}/tree/main/red/${machine.zoneId}/${machine.slug}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="group flex items-start gap-3 rounded-lg border border-border bg-background/40 p-3 transition-colors hover:border-foreground/20 hover:bg-card"
+                        >
+                          <span className={cn("mt-0.5 shrink-0 font-mono text-xs font-semibold tabular-nums", accent.text)}>
+                            {machine.fragment}
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="flex flex-wrap items-center gap-2">
+                              <span className="truncate font-mono text-sm font-semibold text-foreground">
+                                {machine.name}
+                              </span>
+                              <span
+                                className={cn(
+                                  "rounded border px-1.5 py-0.5 font-mono text-[10px] tracking-wide",
+                                  DIFF[machine.difficulty].chip,
+                                )}
+                              >
+                                {DIFF[machine.difficulty].label}
+                              </span>
+                            </span>
+                            <span className="mt-1 block text-pretty text-sm text-muted-foreground">
+                              {machine.teaser}
+                            </span>
+                          </span>
+                          <ArrowUpRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-foreground" />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
                 <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
                   <span className="font-mono text-xs text-muted-foreground">
-                    Máquinas: <span className="text-foreground">próximamente</span>
+                    Máquinas:{" "}
+                    <span className="text-foreground">
+                      {machines.length > 0 ? machines.length : "próximamente"}
+                    </span>
                   </span>
                   <a
                     href={`${SITE.repo}/tree/main/red/${selected.id}`}
