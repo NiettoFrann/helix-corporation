@@ -1,21 +1,25 @@
-# portal-empleados
+<div align="center">
 
-**Zona:** 00 · Perímetro · **Dificultad:** 🟢 Fácil
-**Categorías:** web, inyección SQL, reúso de credenciales, escalada de privilegios
-**Hostname:** `portal-empleados.helixcorp.local` · **IP narrativa:** `10.0.0.10`
+<img src="../../../assets/maquinas/00-portal-empleados.svg" alt="portal-empleados — Zona 00 · Perímetro — Fácil — fragmento F-01" width="100%" />
+
+| Hostname | IP narrativa | Categorías | Objetivo |
+| :--: | :--: | :-- | :--: |
+| `portal-empleados.helixcorp.local` | `10.0.0.10` | web · SQLi · reúso de credenciales · escalada | root → `/root/flag.txt` |
+
+</div>
 
 ## Briefing
+
+<div align="justify">
 
 El Portal de Autogestión de HELIX: donde los empleados miran su ficha y buscan el interno de un compañero. Lo levantaron en 2019 "para ayer" y nunca más lo tocaron. Está de cara a internet, corre sobre la misma caja que usa el sysadmin para todo, y arrastra una costumbre fea: la gente que lo mantiene repite contraseñas como quien repite el café de la mañana.
 
 Es la puerta de entrada a HELIX. Si acá adentro no cuidan ni los datos de su propia gente, imaginate lo que viene después.
 
+</div>
+
 > *"Un portal de RRHH no le importa a nadie. Por eso es por donde se entra."*
 > — Ceniza
-
-## Objetivo
-
-Conseguir acceso root y leer `/root/flag.txt`.
 
 ## Levantar
 

@@ -1,21 +1,25 @@
-# ftp-descargas
+<div align="center">
 
-**Zona:** 00 · Perímetro · **Dificultad:** 🟢 Fácil
-**Categorías:** FTP, WebDAV, RCE, PATH hijacking, escalada de privilegios
-**Hostname:** `ftp-descargas.helixcorp.local` · **IP narrativa:** `10.0.0.12`
+<img src="../../../assets/maquinas/02-ftp-descargas.svg" alt="ftp-descargas — Zona 00 · Perímetro — Fácil — fragmento F-03" width="100%" />
+
+| Hostname | IP narrativa | Categorías | Objetivo |
+| :--: | :--: | :-- | :--: |
+| `ftp-descargas.helixcorp.local` | `10.0.0.12` | FTP · WebDAV · RCE · PATH hijacking · escalada | root → `/root/flag.txt` |
+
+</div>
 
 ## Briefing
+
+<div align="justify">
 
 El servidor de descargas de HELIX: instaladores y manuales del agente VIGÍA, servidos por FTP anónimo desde 2017. Lo pusieron "temporalmente" mientras migraban a algo mejor. Nueve años después sigue ahí, con una zona de subida que alguien habilitó para los partners y nunca cerró.
 
 Nada más permanente que lo temporal. Y en una caja vieja que nadie mira, a veces quedan cosas que no deberían estar a la vista.
 
+</div>
+
 > *"Lo etiquetaron 'temporal' en 2017. Es lo más estable que tiene HELIX."*
 > — 0x0
-
-## Objetivo
-
-Conseguir acceso root y leer `/root/flag.txt`.
 
 ## Levantar
 

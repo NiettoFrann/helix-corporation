@@ -1,21 +1,25 @@
-# web-institucional
+<div align="center">
 
-**Zona:** 00 · Perímetro · **Dificultad:** 🟢 Fácil
-**Categorías:** web, CMS, subida de archivos, RCE, escalada de privilegios
-**Hostname:** `web-institucional.helixcorp.local` · **IP narrativa:** `10.0.0.11`
+<img src="../../../assets/maquinas/01-web-institucional.svg" alt="web-institucional — Zona 00 · Perímetro — Fácil — fragmento F-02" width="100%" />
+
+| Hostname | IP narrativa | Categorías | Objetivo |
+| :--: | :--: | :-- | :--: |
+| `web-institucional.helixcorp.local` | `10.0.0.11` | web · CMS · subida de archivos · RCE · escalada | root → `/root/flag.txt` |
+
+</div>
 
 ## Briefing
+
+<div align="justify">
 
 El sitio público de HELIX: "Blindamos el futuro digital", en letras grandes sobre fondo negro. Lo relanzaron con bombos y platillos en 2019 y desde entonces nadie volvió a tocarlo. Corre un CMS hecho en casa, de esos que alguien instaló una tarde y que todavía tiene el usuario de fábrica. La sala de prensa no publica nada nuevo desde hace años, pero el panel de atrás sigue abierto, esperando.
 
 Una empresa que vende seguridad no actualiza ni su propia vidriera. Por algún lado hay que empezar.
 
+</div>
+
 > *"La página dice 'blindamos el futuro'. El futuro, no la página."*
 > — 0x0
-
-## Objetivo
-
-Conseguir acceso root y leer `/root/flag.txt`.
 
 ## Levantar
 
